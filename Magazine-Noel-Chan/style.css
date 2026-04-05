@@ -20,18 +20,20 @@ body {
     margin: 0;
     font-family: "urw-din", sans-serif;
     font-style: normal;
-    background-image: url(site_assets/BG-Asset.png);
-    /* background-repeat: no-repeat; */
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    background-image: url(site_assets/BG-Asset.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: static;
     color: #E3CEAA;
     background-color: black;
     z-index: 1;
     height: 15vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 a {
@@ -54,7 +56,7 @@ p {
 }
 
 .keep-reading:hover {
-    font-family: "Amphoreus-Regular";
+    font-family: "Amphoreus-Regular", "kudryashev-d-excontrast", "urw-din", sans-serif;
     text-transform: uppercase;
     font-size: 1rem;
     color: #F3EADE;
@@ -107,7 +109,7 @@ header img {
 }
 
 header a:hover {
-    font-family: "Amphoreus-Regular";
+    font-family: "Amphoreus-Regular", "kudryashev-d-excontrast", "urw-din", sans-serif;
     text-transform: uppercase;
     font-size: 2rem;
     color: #F3EADE;
@@ -159,14 +161,61 @@ main {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    background-color: #233247;
+    background-color: rgba(0, 0, 0, 0.50);
     padding: 25px;
     margin: 10px;
 }
 
-.alt {
+.alt01 {
+    color: #E3CEAA;
+    background-color: #233247;
+}
+
+.alt02 {
     color: #233247;
     background-color: #E3CEAA;
+}
+
+/* HOMEPAGE STYLING */
+span {
+    display: inline-block;
+    padding: 5px;
+    position: relative;
+    top: 0;
+}
+
+.covers {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    bottom: 0;
+    padding: 0px;
+    text-align: center;
+    justify-content: center;
+}
+
+article {
+    flex: 1 0 20%;
+}
+
+.feature-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.feature-image-wrapper img {
+    display: block;
+    transition: all .2s ease;
+    position: relative;
+    overflow-y: hidden;
+}
+
+article:hover .feature-image-wrapper p {
+    opacity: 1;
+    transform: translateY(0);
+    max-width: 300px;
+    cursor: pointer;
 }
 
 /* ARTICLES STYLING */
@@ -174,7 +223,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background-color: #233247;
+    background-color: rgba(0, 0, 0, 0.50);
     padding: 25px;
     margin: 10px;
     text-align: center;
@@ -199,8 +248,9 @@ main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     max-width: 500px;
-    align-items: center;
+    gap: 0px 25px;
     list-style-type: upper-roman;
+    list-style-position: inside;
     font-family: "kudryashev-d-excontrast";
     font-style: normal;
 }
@@ -208,13 +258,16 @@ main {
 .directory ul li a {
     text-decoration: none;
     font-family: "urw-din", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .directory ul li a:hover {
-    font-family: "Amphoreus-Regular";
+    font-family: "Amphoreus-Regular", "kudryashev-d-excontrast", "urw-din", sans-serif;
     text-transform: uppercase;
     font-size: 1.5rem;
     color: #F3EADE;
+    cursor: pointer;
 }
 
 .MBTI {
@@ -228,63 +281,38 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 450px;
-}
-
-section h2 {
-    grid-column: span 2;
+    margin: 5px;
     padding: 0;
 }
 
+section h2 {
+    margin: 0;
+    padding: 0;
+    grid-column: span 2;
+}
+
 section img {
-    grid-column: 2/2;
+    margin: 0;
+    padding: 0;
+    grid-column: 1/2;
     max-height: 350px;
     width: auto;
 }
 
 section p {
+    margin: 0;
     padding: 5px;
     font-size: 1rem;
 }
 
-.covers {
-    text-align: center;
+#Worldbearing p,
+#Sea p {
+    font-size: .9rem;
 }
 
-article {
-    flex: 1 0 20%;
-}
 
-.feature-image-wrapper {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
 
-.feature-image-wrapper img {
-    display: block;
-    transition: all .2s ease;
-    position: relative;
-    overflow-y: hidden;
-}
 
-article:hover .feature-image-wrapper p {
-    opacity: 1;
-    transform: translateY(0);
-    max-width: 300px;
-}
-
-.contact-form {
-    display: block;
-    background-color: #233247;
-    padding: 25px;
-    margin: 10px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
 
 .feature-image-wrapper p {
     position: absolute;
@@ -304,7 +332,8 @@ img {
     max-width: 300px;
     height: auto;
     padding: 15px;
-    font-size: .75rem;
+    font-size: 80%;
+    overflow: hidden;
 }
 
 .feature-image-wrapper a {
@@ -312,14 +341,6 @@ img {
     bottom: 0;
     right: 0;
     padding: 5px;
-}
-
-.feature-image-wrapper h3 a {
-    position: absolute;
-    bottom: 0;
-    padding: 5px;
-    text-align: center;
-    justify-content: center;
 }
 
 #fixed a {
@@ -340,6 +361,13 @@ img {
 }
 
 /* FORM STYLING */
+.contact-form {
+    background-color: rgba(0, 0, 0, 0.65);
+    display: block;
+    padding: 25px;
+    margin: 10px;
+}
+
 form {
     width: 100%;
     margin: auto;
@@ -354,6 +382,7 @@ form h2 {
 input,
 label {
     margin: .25rem 0;
+    padding: 0;
     font-size: 1.5rem;
     width: 90%;
     color: #F3EADE;
@@ -362,7 +391,6 @@ label {
     border: none;
 }
 
-textarea,
 input {
     width: 85%;
     resize: vertical;
@@ -370,6 +398,20 @@ input {
     color: #F3EADE;
     font-family: "urw-din", sans-serif;
     border: none;
+}
+
+textarea {
+    width: 89%;
+    resize: vertical;
+    background-color: black;
+    color: #F3EADE;
+    font-family: "urw-din", sans-serif;
+    border: none;
+}
+
+label[feedback] {
+    display: flex;
+    top: 0;
 }
 
 input[type=submit],
@@ -381,14 +423,14 @@ input[type=reset] {
 input[type=submit]:hover {
     background-color: #F3EADE;
     cursor: pointer;
-    font-family: "Amphoreus-Regular";
+    font-family: "Amphoreus-Regular", "kudryashev-d-excontrast", "urw-din", sans-serif;
     font-size: 2.5rem;
 }
 
 input[type=reset]:hover {
     background-color: #F3EADE;
     cursor: pointer;
-    font-family: "Amphoreus-Regular";
+    font-family: "Amphoreus-Regular", "kudryashev-d-excontrast", "urw-din", sans-serif;
     font-size: 2.5rem;
 
 }
@@ -405,4 +447,16 @@ input[type=reset]:hover {
     background-color: #E3CEAA;
     color: #233247;
     align-items: center;
+}
+
+/* TABLE STYLING */
+table a {
+    padding: 5px;
+}
+
+table a:hover {
+    font-family: "Amphoreus-Regular", "kudryashev-d-excontrast", "urw-din", sans-serif;
+    font-size: 1.5rem;
+    color: #F3EADE;
+    cursor: pointer;
 }
